@@ -1,0 +1,44 @@
+
+<div class="outre">
+
+  <form class="example-form" [formGroup]="singUpForm" (ngSubmit)="register()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>User Name</mat-label>
+      <input matInput placeholder="Ex. user" value="" formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput value="" formControlName="password">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput value="" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Mobile Number</mat-label>
+      <input type="number" matInput value="" formControlName="mobileNumber">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Date Of Birth</mat-label>
+      <input type="date" matInput value="" formControlName="dateOfBirth">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Gender</mat-label>
+      <input type="text" matInput value="" formControlName="gender">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Language</mat-label>
+      <input type="text" matInput value="" formControlName="language">
+    </mat-form-field>
+    <button [disabled]="singUpForm.invalid" class="login-button" mat-raised-button>Sign Up</button>
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+  </form>
+
+</div>

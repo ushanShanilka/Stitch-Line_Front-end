@@ -1,0 +1,17 @@
+<div class="outre">
+
+  <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>User Name</mat-label>
+      <input matInput placeholder="Ex. user" value="" formControlName="username">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput value="" formControlName="password">
+    </mat-form-field>
+    <button [disabled]="loginForm.invalid" class="login-button" mat-raised-button>Login</button>
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+  </form>
+
+</div>
