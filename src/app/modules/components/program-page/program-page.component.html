@@ -1,0 +1,21 @@
+<div class="main-wrap">
+  <button mat-icon-button aria-label="Example icon button with a menu icon">
+    <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+  </button>
+  <span >Stitch Line</span>
+</div>
+
+<mat-drawer-container class="example-container" >
+  <mat-drawer class="mat-drawer-inner-container"  #drawer >
+    <button routerLink="/program/create" color="primary" mat-raised-button >Create Program</button>
+    <button routerLink="/program/update" color="primary" mat-raised-button >Update Program</button>
+    <button routerLink="/program/search" color="primary" mat-raised-button >Search Program</button>
+  </mat-drawer>
+  <mat-drawer-content class="drawer-content" >
+    <div class="inner-wrap">
+
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+

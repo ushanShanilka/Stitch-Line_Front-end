@@ -15,7 +15,6 @@ export class UserService {
 
   }
 
-
   public register(dto:UserDTO):Observable<any>{
     return this.http.post('http://localhost:8080/api/v1/service/register',{
       username:dto.username,

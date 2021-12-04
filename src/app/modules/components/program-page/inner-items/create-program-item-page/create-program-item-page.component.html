@@ -1,0 +1,71 @@
+<div class="main-wrap">
+  <div class="content-wrap">
+    <h3 class="topic">Create Program</h3>
+    <div class="form-section">
+          <form class="example-form" [formGroup]="createForm" (ngSubmit)="create()">
+            <div class="row">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Ex. GDSE" value="" formControlName="name">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="Ex. SE" value="" formControlName="description">
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="example-full-width" appearance="fill" >
+                <mat-label>Start Date</mat-label>
+                <input matInput type="date" value="" formControlName="start_date">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>End Date</mat-label>
+                <input matInput type="date" value="" formControlName="end_date">
+              </mat-form-field>
+            </div>
+            <div class="btn-section">
+              <button class="form-btn" color="warn" mat-raised-button >clear</button>
+              <button [disabled]="createForm.invalid" class="form-btn" color="primary" mat-raised-button >Create</button>
+            </div>
+          </form>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let element">{{element.position}}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let element">{{element.name}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef>Weight</th>
+          <td mat-cell *matCellDef="let element">{{element.weight}}</td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef>Symbol</th>
+          <td mat-cell *matCellDef="let element">{{element.symbol}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-row
+          (click)="clickedRows.add(row)"
+          [class.demo-row-is-clicked]="clickedRows.has(row)"
+          *matRowDef="let row; columns: displayedColumns;"
+        ></tr>
+      </table>
+
+    </div>
+
+  </div>
+</div>
