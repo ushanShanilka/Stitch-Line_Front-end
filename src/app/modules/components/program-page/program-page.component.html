@@ -2,7 +2,10 @@
   <button mat-icon-button aria-label="Example icon button with a menu icon">
     <mat-icon (click)="drawer.toggle()">menu</mat-icon>
   </button>
-  <span >Stitch Line</span>
+  <span>Stitch Line</span>
+  <div class="logout-btn">
+    <span (click)="logOut()">Log Out</span>
+  </div>
 </div>
 
 <mat-drawer-container class="example-container" >

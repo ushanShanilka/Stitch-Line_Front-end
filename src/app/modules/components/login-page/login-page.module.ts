@@ -10,6 +10,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
         MatInputModule,
         MatButtonModule,
         ReactiveFormsModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        MatSelectModule
     ]
 })
 export class LoginPageModule { }

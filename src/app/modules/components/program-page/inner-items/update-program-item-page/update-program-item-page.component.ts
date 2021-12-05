@@ -34,8 +34,8 @@ export class UpdateProgramItemPageComponent implements OnInit {
   updateForm = new FormGroup({
     name: new FormControl('',[Validators.minLength(1),Validators.maxLength(20)]),
     description: new FormControl('',Validators.minLength(1)),
-    start_date: new FormControl('',Validators.minLength(1)),
-    end_date: new FormControl('',Validators.minLength(1))
+    startDate: new FormControl('',Validators.minLength(1)),
+    endDate: new FormControl('',Validators.minLength(1))
   })
 
   constructor(private programService: ProgramService) { }
@@ -47,8 +47,8 @@ export class UpdateProgramItemPageComponent implements OnInit {
     const dto = new ProgramDTO(
       this.updateForm.get('name')?.value.toString().trim(),
       this.updateForm.get('description')?.value.toString().trim(),
-      this.updateForm.get('start_date')?.value.toString().trim(),
-      this.updateForm.get('end_date')?.value.toString().trim(),
+      this.updateForm.get('startDate')?.value.toString().trim(),
+      this.updateForm.get('endDate')?.value.toString().trim(),
     );
 
     this.programService.update(dto).subscribe(response=>{

@@ -4,12 +4,66 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
 }
 .content-wrap{
-  width: 89%;
+  width: 79%;
   height: 90%;
+  border-radius: 10px;
+}
+.topic{
+  text-align: center;
+  height: 30px;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 28px;
+  font-weight: bolder;
+  font-family: 'Poppins', sans-serif;
+}
+.form-section{
+  width: 100%;
+}
+.row{
   display: flex;
-  background-color: #ecf0f1;
-  border: 1px solid red;
+  width: 80%;
+  margin: auto;
+  h4{
+    margin: auto;
+  }
+}
+
+.example-form {
+  margin: 10px;
+}
+
+.example-full-width {
+  width: 100%;
+  margin: 10px;
+}
+.btn-section{
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  margin-bottom: 20px;
+}
+.form-btn{
+  margin-right: 10px;
+  align-self: flex-end;
+}
+.demo-table {
+  width: 77%;
+  margin: auto;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
 }

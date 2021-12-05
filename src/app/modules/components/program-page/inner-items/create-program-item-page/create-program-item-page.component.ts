@@ -3,19 +3,15 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import ProgramDTO from "../../../../dto/ProgramDTO";
 import {ProgramService} from "../../../../services/program.service";
 
-
 export interface PeriodicElement {
   name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  description: string;
+  startDate: string;
+  endDate: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: "ds", weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-
+let ELEMENT_DATA: PeriodicElement[] = [
+  {name:"GDSE", description: "SE", startDate: "2021-12-05", endDate: '2022-12-05'},
 ];
 
 @Component({
@@ -33,14 +29,13 @@ export class CreateProgramItemPageComponent implements OnInit {
   createForm = new FormGroup({
     name: new FormControl('',[Validators.minLength(1),Validators.maxLength(20)]),
     description: new FormControl('',Validators.minLength(1)),
-    start_date: new FormControl('',Validators.minLength(1)),
-    end_date: new FormControl('',Validators.minLength(1))
+    startDate: new FormControl('',Validators.minLength(1)),
+    endDate: new FormControl('',Validators.minLength(1))
   })
 
   constructor(private programService: ProgramService) {
     this.getAll();
   }
-
 
   ngOnInit(): void {
   }
@@ -49,12 +44,12 @@ export class CreateProgramItemPageComponent implements OnInit {
     const dto = new ProgramDTO(
       this.createForm.get('name')?.value.toString().trim(),
       this.createForm.get('description')?.value.toString().trim(),
-      this.createForm.get('start_date')?.value.toString().trim(),
-      this.createForm.get('end_date')?.value.toString().trim(),
+      this.createForm.get('startDate')?.value.toString().trim(),
+      this.createForm.get('endDate')?.value.toString().trim(),
     );
 
     this.programService.create(dto).subscribe(response=>{
-      alert("Sup!");
+      alert("Success !");
     },error => {
       console.log(error)
     })
@@ -65,7 +60,6 @@ export class CreateProgramItemPageComponent implements OnInit {
       // @ts-ignore
       console.log(response[0].name)
       return response;
-
     },error => {
       console.log(error)
     })

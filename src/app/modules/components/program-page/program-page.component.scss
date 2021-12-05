@@ -33,3 +33,13 @@ mat-drawer-content {
 .drawer-content{
   width: 100%;
 }
+.logout-btn{
+  width: 83vw;
+  justify-content: flex-end;
+  display: flex;
+
+  span{
+    cursor: pointer;
+    padding-left: 0px;
+  }
+}

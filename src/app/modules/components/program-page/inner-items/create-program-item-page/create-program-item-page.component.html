@@ -17,12 +17,12 @@
             <div class="row">
               <mat-form-field class="example-full-width" appearance="fill" >
                 <mat-label>Start Date</mat-label>
-                <input matInput type="date" value="" formControlName="start_date">
+                <input matInput type="date" value="" formControlName="startDate">
               </mat-form-field>
 
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>End Date</mat-label>
-                <input matInput type="date" value="" formControlName="end_date">
+                <input matInput type="date" value="" formControlName="endDate">
               </mat-form-field>
             </div>
             <div class="btn-section">
@@ -34,26 +34,26 @@
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
         <!-- Position Column -->
         <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef>No.</th>
-          <td mat-cell *matCellDef="let element">{{element.position}}</td>
-        </ng-container>
-
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef>Name</th>
           <td mat-cell *matCellDef="let element">{{element.name}}</td>
         </ng-container>
 
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Description</th>
+          <td mat-cell *matCellDef="let element">{{element.description}}</td>
+        </ng-container>
+
         <!-- Weight Column -->
         <ng-container matColumnDef="weight">
-          <th mat-header-cell *matHeaderCellDef>Weight</th>
-          <td mat-cell *matCellDef="let element">{{element.weight}}</td>
+          <th mat-header-cell *matHeaderCellDef>Start_date</th>
+          <td mat-cell *matCellDef="let element">{{element.startDate}}</td>
         </ng-container>
 
         <!-- Symbol Column -->
         <ng-container matColumnDef="symbol">
-          <th mat-header-cell *matHeaderCellDef>Symbol</th>
-          <td mat-cell *matCellDef="let element">{{element.symbol}}</td>
+          <th mat-header-cell *matHeaderCellDef>End_date</th>
+          <td mat-cell *matCellDef="let element">{{element.endDate}}</td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

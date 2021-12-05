@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import UserDTO from "../../../../dto/UserDTO";
 import {UserService} from "../../../../services/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-up-item-page',
@@ -24,7 +25,7 @@ export class SignUpItemPageComponent implements OnInit {
   loading=false;
 
 
-  constructor(private userService: UserService ) { }
+  constructor(private router: Router,private userService: UserService ) { }
 
   ngOnInit(): void {
   }
@@ -43,8 +44,9 @@ export class SignUpItemPageComponent implements OnInit {
 
     this.userService.register(dto).subscribe(response=>{
       console.log(response)
-      alert("Sup!");
+      alert("Success !");
       this.loading=true;
+      this.router.navigateByUrl("/login");
     },error => {
       console.log(error)
       this.loading=false;

@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import UserDTO from "../../../../dto/UserDTO";
 import {UserService} from "../../../../services/user.service";
 import {CookieService} from "ngx-cookie";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-item-page',
@@ -20,7 +21,7 @@ export class LoginItemPageComponent implements OnInit {
   loading=false;
 
 
-  constructor(private userService: UserService,private cookieService: CookieService) { }
+  constructor(private router: Router,private userService: UserService,private cookieService: CookieService) { }
 
   ngOnInit(): void {
   }
@@ -49,6 +50,7 @@ export class LoginItemPageComponent implements OnInit {
       alert("Success !")
 
       this.loading=true;
+      this.router.navigateByUrl("/program");
     },error => {
       console.log(error)
       this.loading=false;

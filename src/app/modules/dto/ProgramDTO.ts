@@ -1,15 +1,14 @@
 export default class ProgramDTO{
   private _name:string;
   private _description:string;
-  private _start_date:string;
-  private _end_date:string;
+  private _startDate:string;
+  private _endDate:string;
 
-
-  constructor(name: string, description: string, start_date: string, end_date: string) {
+  constructor(name: string, description: string, startDate: string, endDate: string) {
     this._name = name;
     this._description = description;
-    this._start_date = start_date;
-    this._end_date = end_date;
+    this._startDate = startDate;
+    this._endDate = endDate;
   }
 
   get name(): string {
@@ -28,19 +27,19 @@ export default class ProgramDTO{
     this._description = value;
   }
 
-  get start_date(): string {
-    return this._start_date;
+  get startDate(): string {
+    return this._startDate;
   }
 
-  set start_date(value: string) {
-    this._start_date = value;
+  set startDate(value: string) {
+    this._startDate = value;
   }
 
-  get end_date(): string {
-    return this._end_date;
+  get endDate(): string {
+    return this._endDate;
   }
 
-  set end_date(value: string) {
-    this._end_date = value;
+  set endDate(value: string) {
+    this._endDate = value;
   }
 }
